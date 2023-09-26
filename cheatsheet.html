@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+</head>
+<body>
+	<h1>Physics 1140 Exam 1 Crib Sheet</h1>
+    <div class="multicolumn">
+		<h2>Types of waves</h2>
+<h3>Concepts of waves</h3>
+<p>A wave is a pattern of motion. Waves can change through time, through space, or through time and space. If a wave is moving, then its motion obeys:</p>
+<p>$$
+v = \lambda f = \frac{\lambda}{T}
+$$</p>
+<p>Additionally, waves have a quantity called the <strong>phase</strong> $\phi$, which is the angular measure of how much of a cycle they have covered - a phase of $2\pi$ is a complete cycle. Phase can be calculated for spacial waves with:</p>
+<p>$$
+\phi = \frac{2\pi}{\lambda} (x - x_0)
+$$</p>
+<p>And for temporal waves with:</p>
+<p>$$
+\phi = \frac{2\pi}{T} (t - t_0)
+$$</p>
+<p>The <strong>phase shift</strong> is how much shifted to the right a wave is. It can be determined visually by how much of a cycle is missing from the front of the wave. For a wave that has a portion of $\frac{1}{n}$ cycles missing, the phase shift is $\frac{\pi}{2n}$.</p>
+<h3>Harmonic waves</h3>
+<p>A harmonic wave is a stationary 1D wave that can be represented by:</p>
+<p>$$
+y(t) = A \sin(\omega t + \phi_0)
+$$</p>
+<p>Here, $\phi_0$ is the phase shift, $A$ is the amplitude, and $\omega = \frac{2\pi}{T} = 2\pi f$ is the angular frequency.</p>
+<h3>Travelling waves</h3>
+<p>A travelling wave is a moving 2D wave that can be represented by:</p>
+<p>$$
+y(x, t) = y_m \sin (k(x - vt) + \phi_0)
+$$</p>
+<p>Here, $k = \frac{2\pi}{\lambda}$ and is the wavenumber, and $\omega = 2\pi f$.</p>
+<h2>Interference</h2>
+<p>When two waves with a phase difference add, they interfere, according to:</p>
+<p>$$
+\small y_3 (t) = 2y_0 \cos \left(\frac{\phi_1 - \phi_2}{2} \right) \sin \left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)
+$$</p>
+<p>The amplitude of the new sine wave is:</p>
+<p>$$
+A = 2y_0 \cos \left(\frac{\phi_1 - \phi_2}{2} \right)
+$$</p>
+<p>The time-averaged intensity $I_R$ of two waves is given by:</p>
+<p>$$
+I_R = I_1 + I_2 + 2\sqrt{I_1 I_2} \cos(\Delta \phi)
+$$</p>
+<p>If the two original waves had the same intensity and have a phase difference $\Delta \phi$, then:</p>
+<p>$$
+I_R = 4 I_1 \cos^2 \left(\frac{\Delta \phi}{2}\right)
+$$</p>
+<h2>Michelson interferometer</h2>
+<p>The intensity at the detector is given by:</p>
+<p>$$
+I_{detector} = I_0 \cos^2 \left(\frac{2\pi}{\lambda}|A - B|\right)
+$$</p>
+<p>where $A$ and $B$ are the two individual path lengths between the mirror and beam-splitter.</p>
+<h2>Light</h2>
+<p>The intensity of light is given by:</p>
+<p>$$
+I = \phi E = \phi hf
+$$
+where $\phi$ is the flux, given by:</p>
+<p>$$
+\phi = \frac{N}{A t}
+$$</p>
+<h2>Young double-slit experiment</h2>
+<p>Given light waves passing through two slits separated by distance $d$ which are a distance $D$ from a distant screen, and that a peak (maximum) in the observed interference pattern on the screen is $m$ wavelengths from the center of the screen, then:</p>
+<p>$$
+\theta = \frac{y}{D}
+$$</p>
+<p>$$
+y = m \lambda
+$$</p>
+<p>$$
+\lambda = \frac{d \sin \theta}{m}
+$$</p>
+<h2>Quantum mechanics</h2>
+<p>Light is composed of quanta called photons. The energy of a photon is given by:</p>
+<p>$$
+E = hf
+$$</p>
+<p>where $h$ is Planck's constant.</p>
+<h2>Photoelectric effect</h2>
+<p>Light is incident on a metal cathode placed in a vacuum chamber. If photons have sufficiently high frequency, then they eject electrons from the cathode, causing a current. The <strong>stopping potential</strong> $V_0 = -\Delta V$ is the potential that results in no current, and is given by:</p>
+<p>$$
+V_0 =
+\begin{cases}
+0, f &lt; f_0 \\
+\frac{hf}{e} - \frac{h f_0}{e}, f \geq f_0
+\end{cases}
+$$</p>
+<p>Millikan found that the stopping potential depends only on the <strong>frequency</strong> of the incident light wave, and <strong>not</strong> on the intensity of the light. No current is observed when light has a frequency below a <em>threshold</em> frequency $f_0$. The (confusingly-named) work function, the energy of a photon of the threshold frequency, is given by $W = hf_0$, and is a constant.</p>
+
+    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <script src="load-katex.js"></script>
+</body>
+</html>

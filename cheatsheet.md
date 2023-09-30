@@ -24,6 +24,8 @@ $$
 
 The **phase shift** is how much shifted to the right a wave is. It can be determined visually by how much of a cycle is missing from the front of the wave. For a wave that has a portion of $\frac{1}{n}$ cycles missing, the phase shift is $\frac{\pi}{2n}$.
 
+The **amplitude** of a wave is its maximum strength. The amplitude is related to the **intensity** of a wave by $I \propto A^2$.
+
 ### Harmonic waves
 
 A harmonic wave is a stationary 1D wave that can be represented by:
@@ -98,12 +100,20 @@ $$
 Given light waves passing through two slits separated by distance $d$ which are a distance $D$ from a distant screen, and that a peak (maximum) in the observed interference pattern on the screen is $m$ wavelengths from the center of the screen, then:
 
 $$
-\theta = \frac{y}{D}
+y = m \lambda
 $$
 
 $$
-y = m \lambda
+\theta = \tan^{-1}\left(\frac{y}{D}\right)
 $$
+
+The difference in path travelled by the waves is given by:
+
+$$
+\Delta L = d \sin \theta
+$$
+
+And the wavelength is given by:
 
 $$
 \lambda = \frac{d \sin \theta}{m}

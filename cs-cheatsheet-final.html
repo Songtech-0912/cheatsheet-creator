@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+</head>
+<body>
+	<h1> CS final crib sheet</h1>
+    <div class="multicolumn">
+		<p><img src="modulo.png" alt="Modulo ops diagram" /></p>
+<p><strong>Scope:</strong></p>
+<p>A variable declared anywhere outside a function is in the (module’s) global scope, and a variable declared inside a function is in that function’s scope. Blocks like conditionals and loops don't have their own scope.</p>
+<h2>Booleans</h2>
+<ul>
+<li><code>a and b</code>: only <code>True</code> if both <code>a</code> and <code>b</code> are <code>True</code></li>
+<li><code>a or b</code>: <code>True</code> as long as just <code>a</code> or just <code>b</code> is <code>True</code></li>
+<li><code>not a</code>: returns <code>True</code> if <code>a</code> is <code>False</code> and <code>False</code> if <code>a</code> is <code>True</code></li>
+<li>Equality operators: <code>==</code> (equal) and <code>!=</code> (not equal)</li>
+</ul>
+<h2>Sequences and collections</h2>
+<h3>List methods</h3>
+<ul>
+<li><code>list()</code> creates new list</li>
+<li><code>range(start, stop, step)</code> creates range</li>
+<li><code>alist[idx]</code> index list</li>
+<li><code>alist.append(val)</code> add item to list</li>
+<li><code>alist.extend(anotherlist)</code> append another list to list</li>
+<li><code>alist.index(val)</code> finds the index of first occurence of item in list</li>
+<li><code>alist.insert(val)</code> inserts <code>val</code> into the list before the item at index</li>
+<li><code>alist.pop()</code> removes last item (and returns it too)</li>
+<li><code>alist.reverse()</code> reverses order</li>
+<li><code>alist.sort()</code> sort list in place (this doesn't return anything!)</li>
+<li><code>alist.remove(val)</code> removes first item found that matches <code>val</code></li>
+<li><code>max(alist)</code> and <code>min(alist)</code> do what you'd think they do (return largest/smallest element)</li>
+<li><code>alist + blist</code> concatenates two list</li>
+<li><code>alist * n</code> a new list that returns <code>alist</code> n times</li>
+<li><code>val in alist</code> checks if value is in list</li>
+<li><code>len(alist)</code> number of items in list</li>
+<li><code>sum(alist)</code> sum of items in list (if it contains numbers)
+booleans on lists depend on the <em>first item that differs</em></li>
+</ul>
+<h3>String methods</h3>
+<ul>
+<li><code>astr.join(iter)</code> a new string by joining an iterable (e.g. list) of strings with <code>astr</code> between each item</li>
+<li><code>astr.split(sep)</code> splits by whitespace (default) or by provided separator <code>sep</code></li>
+<li><code>astr.replace(a, b)</code> replace <code>a</code> with <code>b</code> in string</li>
+<li><code>astr.startswith()</code>, <code>astr.endswith()</code>, <code>astr.title()</code>, <code>astr.upper()</code>, <code>astr.lower()</code> do as you'd expect</li>
+<li><code>astr.isalpha()</code> is alphabetical, <code>astr.isdecimal()</code>, <code>astr.isnumeric()</code> and <code>astr.isdigit()</code> do as you'd expect</li>
+<li><code>astr.find()</code> results in finding the index of the first occurence of a substring; -1 if the substring is not found</li>
+<li><code>astr.strip()</code> this one works like this:<ul>
+<li><code>x = &quot;   Hellooo World!    &quot;</code></li>
+<li>Output: <code>Hellooo World</code> - note how all the whitespace characters on the left and right are removed</li>
+<li>When passed argument, it removes characters if they are present at the <em>start</em> and <em>end</em> of the string</li>
+<li>Stripping on only the left or right of a string is also possible with <code>x.lstrip()</code> and <code>x.rstrip()</code></li>
+</ul>
+</li>
+</ul>
+<p>Tuples have much of the same functionality with lists, with two exceptions:</p>
+<ol>
+<li>They are immutable, any operation that acts on a tuple can only return a new tuple instead of modifying an existing one</li>
+<li>While they support read indexing, like <code>atuple[idx]</code>, they do not support write indexing</li>
+<li><code>min()</code> and <code>max()</code> still work as do <code>val in atuple</code> but what doesn't work is <code>sort()</code></li>
+</ol>
+<h2>Conditionals and loops</h2>
+<ul>
+<li>Use <code>for item in ls</code> for iterating over elements</li>
+<li>Use <code>for i in range(len(ls))</code> for iterating between 0 and <code>len - 1</code> (can use custom step)</li>
+</ul>
+<h2>File operations</h2>
+<p>File objects are created by <code>open()</code>. File objects store the current pointer to the line being read. <code>f.readline()</code> reads one line forward in the file and advances the pointer. <code>f.read()</code> reads the entire remainder of a file to memory. At the end of a file, both return empty strings. <code>f.close()</code> closes the file stream.</p>
+<p>Static web pages can be opened using the <code>urllib.request</code> page and the <code>request.urlopen()</code> function - this returns a file object.</p>
+<h2>Sets &amp; dictionaries</h2>
+<ul>
+<li><code>set &lt;= other</code> tests that <code>set</code> is a subset of <code>other</code></li>
+<li><code>set &lt; other</code> tests that <code>set</code> is a subset of <code>other</code> but <code>set != other</code></li>
+<li><code>set &gt;= other</code> tests that <code>set</code> is a superset of <code>other</code></li>
+<li><code>set &gt; other</code> tests that <code>set</code> is a superset of <code>other</code> but <code>set != other</code></li>
+<li><code>set | other</code> or <code>set.union(other)</code> combines all elements of <code>set</code> and <code>other</code></li>
+<li><code>set &amp; other</code> or <code>set.intersection(other)</code> finds all elements both in <code>set</code> and <code>other</code></li>
+<li><code>set - other</code> or <code>set.difference(other)</code> finds elements in <code>set</code> that are not in <code>other</code></li>
+<li><code>set ^ other</code> or <code>set.symmetric_difference(other)</code> finds elements in <code>set</code> or <code>other</code> but not both</li>
+<li><code>set.add(val)</code> and <code>set.remove(val)</code> do as you'd expect</li>
+</ul>
+<h2>Quick snippets</h2>
+<p>Keys list and values list into dictionary:</p>
+<pre><code class="language-python">dict(zip(keys_list, vals_list))
+</code></pre>
+<p>Invert dictionary:</p>
+<pre><code class="language-python">inv_map = {v: k for k, v in my_map.items()}
+</code></pre>
+<p>Loop through dictionary:</p>
+<pre><code>for k, v in my_map.items():
+    print(k, v)
+</code></pre>
+<p>Dictionary comprehension:</p>
+<pre><code># squares of evens from 0 to 4
+squares = { x: x ** 2 for x in range(5) if x % 2 == 0 }
+</code></pre>
+<p>Merge dictionaries: <code>dict1.copy().update(dict2)</code></p>
+<p><strong>Dunder methods</strong></p>
+<ul>
+<li>Constructor: <code>__init__</code></li>
+<li>Add: <code>__add__</code></li>
+<li>Multiply: <code>__mul__</code></li>
+<li>Divide: <code>__div__</code></li>
+<li>Power: <code>__pow__</code></li>
+<li>Convert to string: <code>__str__</code></li>
+<li>Equal to operation: <code>__eq__</code></li>
+<li>Not equal to operation: <code>__ne__</code></li>
+<li>Less than operation: <code>__lt__</code></li>
+<li>Greater than operation: <code>__gt__</code></li>
+<li>Less or equal operation: <code>__le__</code></li>
+<li>Greater or equal operation: <code>__ge__</code></li>
+</ul>
+
+    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <script src="load-katex.js"></script>
+</body>
+</html>

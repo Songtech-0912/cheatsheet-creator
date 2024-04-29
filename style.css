@@ -8,19 +8,21 @@ body {
 	height: 100vh;
 	width: 100%;
 	padding: 3rem;
-	font-size: 0.6rem;
+	font-size: 0.6rem; /* 0.8rem */
 	font-family: Inter, sans-serif;
 }
 
 h1 {
 	text-align: center;
-	margin-bottom: 1.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
 }
 
-image {
-	display: block:
-	width: auto;
-	height: auto;
+img {
+	display: block;
+	width: 50%;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
 }
 
 p, ul, ol {
